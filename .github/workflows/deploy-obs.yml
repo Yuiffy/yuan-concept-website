@@ -21,14 +21,14 @@ jobs:
       - name: Authenticate to Huawei Cloud
         uses: huaweicloud/auth-action@v1.0.0
         with:
-          access_key_id: \${{ secrets.HUAWEICLOUD_ACCESS_KEY }}
-          secret_access_key: \${{ secrets.HUAWEICLOUD_SECRET_ACCESS_KEY }}
-          region: \${{ secrets.HUAWEICLOUD_REGION }}
+          access_key_id: ${{ secrets.HUAWEICLOUD_ACCESS_KEY }}
+          secret_access_key: ${{ secrets.HUAWEICLOUD_SECRET_ACCESS_KEY }}
+          region: ${{ secrets.HUAWEICLOUD_REGION }}
 
       - name: Upload site to OBS
         uses: huaweicloud/obs-helper@v1.4.0
         with:
-          bucket_name: \${{ secrets.HUAWEICLOUD_OBS_BUCKET }}
+          bucket_name: ${{ secrets.HUAWEICLOUD_OBS_BUCKET }}
           local_file_path: ./site
           obs_file_path: /
           operation_type: upload
